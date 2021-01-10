@@ -1,0 +1,27 @@
+Where to find Ruby documentation:
+	https://docs.ruby-lang.org/en
+	http://ruby-doc.org (secondary)
+
+While loop returns: nil OR value passed to break, if break is used w/a value
+
+Large numbers can be written w/underscores as separators for readability, e.g., 1000000 || 1_000_000.
+	Underscores don't even have to be in groups of 3—but that makes the most sense for human readability
+
+Symbols are immutable and unique identifiers--they are made by prepending a colon to a variable name
+	To make a Symbol for my name, I'd use :Andrew
+	I could also do :"Andrew"--these are equivalent.
+
+In Ruby documentation, :: is used to indicate a class method, and # for an instance method
+	String::new vs String#upcase
+	In general, methods return a new object unless ending in !, but there are some exceptions. Methods ending in ? are typically boolean
+
+A helpful String method: upcase (and its opposite, downcase).
+	To make a string uppercase: "xyz".upcase
+
+% delimiters can be used to make strings (or other types). %w(a b c) would return an array like so: ['a', 'b', 'c']
+Using an uppercase letter allows interpolation & escaped characters; lowercase letter disallows those:
+	%i Array of Symbols	%q String
+	%r Regular Exp		%s Symbol
+	%w Array of Strings	%x Backtick (capture subshell result)
+
+

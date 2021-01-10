@@ -1,0 +1,11 @@
+Methods have an implicit return, which is the returned value of the last line executed
+
+If a value is returned but not stored in a variable (or mutating a preexisting variable), it will be inaccessible.
+
+Reassignment (including operators like += and -=) do not mutate a variable--they set a variable to point to a different object.
+
+Strings are mutable--note that String#[]= (changing a character) DOES mutate the original string.
+
+Local variables inside method definitions are their own set--local variables declared inside methods can't be accessed outside them, and outside local variable aren't visible inside method definitions.
+
+Unlike method definitions, invoking a method using a block can access previously declared local variables.
