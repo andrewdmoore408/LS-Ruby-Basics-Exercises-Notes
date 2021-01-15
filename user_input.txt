@@ -1,0 +1,203 @@
+REPEAT AFTER ME
+
+puts "What do you want to hear?"
+
+to_repeat = gets.chomp
+puts to_repeat
+
+YOUR AGE IN MONTHS
+
+puts "What is your age in years?"
+years_old = gets.chomp.to_i
+
+puts "You are #{years_old * 12} months old."
+
+PRINT SOMETHING (PART 1)
+
+puts "Do you want me to print something? (y/n)"
+
+reply = gets.chomp
+
+if reply == 'y'
+  p "something"
+end
+
+-- Further exploration--
+	To allow for uppercase responses as well, I'd add #downcase so that the text will be lowercase regardless of what the user entered.
+
+PRINT SOMETHING (PART 2)
+
+loop do
+  puts "Do you want me to print something? (y/n)"
+
+  choice = gets.chomp.downcase
+
+  case choice
+    when 'y'
+      puts "something"
+      break
+    when 'n'
+      break
+    else
+      puts "Invalid input! Enter (y/n)"
+  end
+
+end
+
+LAUNCH SCHOOL PRINTER (PART 1)
+
+i = nil
+
+loop do
+  puts "How many output lines? (Enter a number >= 3)"
+
+  i = gets.chomp.to_i
+
+  if i < 3
+    puts "Invalid input! Must be 3 or over..."
+    next
+  end
+
+  i.times do
+    puts "Launch School is the best!"
+    break
+  end
+
+end
+
+PASSWORDS
+
+PASSWORD = "RosEbudd"
+
+loop do
+  print "Enter password: "
+  input = gets.chomp
+
+  if input == PASSWORD
+    puts "Welcome! Authenticated..."
+    break
+  else
+    p "\nInvalid password! Retry: "
+    next
+  end
+end
+
+USER NAME AND PASSWORD
+
+USERNAME = "CliffSecord"
+PASSWORD = "I'mtheRocketeer"
+
+loop do
+  puts "Enter username: "
+  username_try = gets.chomp
+
+  puts "Enter password: "
+  password_try = gets.chomp
+
+  if username_try != USERNAME || password_try != PASSWORD
+    puts "Invalid input! Try again."
+    next
+  else
+    break
+  end
+end
+
+puts "Welcome! You're now logged in."
+
+DIVIDING NUMBERS
+
+def valid_number?(number_string)
+  number_string.to_i.to_s == number_string
+end
+
+numerator = nil
+
+loop do
+  puts "Please enter the numerator:"
+  numerator_try = gets.chomp
+
+  if valid_number?(numerator_try)
+    numerator = numerator_try
+    break
+  else
+    puts "You must enter a valid number."
+  end
+end
+
+denominator = nil
+
+
+loop do
+  puts "Please enter the denominator:"
+  denominator_try = gets.chomp
+
+  if valid_number?(denominator_try)
+    if denominator_try.to_i == 0
+      puts "Error! Can't divide by 0"
+      next
+    else
+      denominator = denominator_try
+      break
+    end
+  else
+    puts "You must enter a valid number."
+  end
+end
+
+puts "#{numerator} / #{denominator} = #{numerator.to_i / denominator.to_i}"
+
+LAUNCH SCHOOL PRINTER (PART 2)
+
+input = nil
+
+loop do
+  puts "How many output lines? (Enter a number >= 3)"
+
+  input = gets.chomp
+
+  break if input.downcase == 'q'
+  
+  i = input.to_i
+
+  if i < 3
+    puts "Invalid input! Must be 3 or over..."
+    next
+  end
+
+  i.times { puts "Launch School is the best!" }
+
+end
+
+	NOTE: break only jumps out of the innermost loop block
+
+OPPOSITES ATTRACT
+
+def valid_number?(number_string)
+  number_string.to_i.to_s == number_string && number_string.to_i != 0
+end
+
+loop do
+  puts "Please enter a positive or negative number: "
+  first_num = gets.chomp
+
+  next unless valid_number?(first_num) { puts "You must enter a valid number!" }
+
+  puts "Please enter a positive or negative number: "
+  second_num = gets.chomp
+
+  next unless valid_number?(second_num) { puts "You must enter a valid number!" }
+
+  first_num = first_num.to_i
+  second_num = second_num.to_i
+
+  if first_num.negative? && second_num.negative?
+    puts "One number must be positive"
+    next
+  elsif first_num.positive? && second_num.positive?
+    puts "One number must be negative"
+    next
+  else
+    puts "#{first_num} + #{second_num} = #{first_num.to_i + second_num.to_i}"
+    break
+  end
+end
