@@ -1,0 +1,194 @@
+Ending a loop: break command
+
+already_ran = false
+
+loop do 
+  puts 'Just keep printing...'
+  already_ran = true
+
+  break if already_ran == true
+end
+
+(Could just add break after the puts command without needing a variable or condition)
+
+CONTROL THE LOOP
+
+increment iterations and then make the break conditional...
+
+iterations = 1
+
+loop do
+  puts "Number of iterations: #{iterations}"
+  iterations += 1
+  break if iterations > 5
+end
+
+SAY HELLO
+
+Using a boolean makes it difficult to work in terms of number of iterations. One approach would be to use the 5.times method, but perhaps the approach LS wants here is to change the say_hello variable into an integer counter?
+
+say_hello = 0
+
+while say_hello < 5
+  puts 'Hello!'
+  say_hello += 1
+end
+
+PRINT WHILE
+
+Searched the Ruby docs to learn about random number generation. Learned that Random is an interface to pseudo-random NG, and that a PRNG needs to be instantiated and then used to produce a pseudo-random number.
+
+prng = Random.new
+
+random_nums = []
+
+count = 0
+
+while count < 5
+  random_nums.push( prng.rand(99) )
+  count += 1
+end
+
+puts random_nums
+
+COUNT UP
+
+The initial variable value needs to be modified, and then the loop needs to increment it rather than decrementing it.
+
+count = 1
+
+until count > 10
+  puts count
+  count += 1
+end
+
+PRINT UNTIL
+
+numbers = [7, 9, 13, 25, 18]
+
+until numbers.size == 0
+  puts numbers.shift
+end
+
+THAT'S ODD
+
+Using next if... will allow for conditional execution of a loop block
+
+for i in 1..100
+  next if i % 2 == 0
+  puts i
+end
+
+-- Another option is to use the #odd? method to check for oddness. A more elegant line overall in the block is "puts i if i.odd?"
+
+GREET YOUR FRIENDS
+
+friends = ['Sarah', 'John', 'Hannah', 'Dave']
+
+for i in 0..friends.size-1
+  puts "Hello, #{friends[i]}!"
+end
+
+-- A more elegant solution (and one where I don't have to worry about an off-by-one error is "for friend in friends {}"
+
+CONDITIONAL LOOP
+
+process_the_loop = [true, false].sample
+
+if process_the_loop
+  loop do
+    puts "The loop was processed!"
+    break
+  end
+else
+    puts "The loop wasn't processed!"
+end
+
+GET THE SUM
+
+loop do
+  puts "What does 2 + 2 equal?"
+  answer = gets.chomp.to_i
+
+  if answer == 4
+    puts "That's correct!"
+    break
+  else
+    puts "Wrong answer. Try again!"
+  end
+
+end
+
+INSERT NUMBERS
+
+numbers = []
+
+loop do
+  puts "Enter any number:"
+  input = gets.chomp.to_i
+  numbers.push(input)
+
+  break if numbers.length == 5
+end
+
+puts numbers
+
+EMPTY THE ARRAY
+
+names = ['Sally', 'Joe', 'Lisa', 'Henry']
+
+loop do 
+  puts names.shift
+  break if names.empty?
+end
+
+--Further exploration--
+To print the names in reverse order, #pop could be used instead of #shift. This would reverse the order without necessitating any other code changes.
+
+STOP COUNTING
+
+5.times do |index|
+  puts index
+  break if index == 2
+end
+
+	Integer#times method counts from 0 to the integer - 1. Block param represents the current count.
+
+ONLY EVEN
+
+number = 0
+
+until number == 10
+  number += 1
+  next if number.odd?
+
+  puts number
+end
+
+FIRST TO FIVE
+
+number_a = 0
+number_b = 0
+
+loop do
+  number_a += rand(2)
+  number_b += rand(2)
+
+  next unless number_a == 5 || number_b == 5
+  puts "5 was reached!"
+
+  break
+end
+
+GREETING
+
+def greeting
+  puts "Hello!"
+end
+
+number_of_greetings = 2
+
+while number_of_greetings > 0
+  greeting
+  number_of_greetings -= 1
+end
