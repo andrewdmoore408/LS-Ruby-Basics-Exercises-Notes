@@ -1,0 +1,55 @@
+BREAKFAST, LUNCH, OR DINNER? (PART 1)
+
+The example code will print "Breakfast". The method returns that text, and #puts is being called before it, so that's what will be output.
+
+...(PART 2)
+
+This code will print "Evening"--it's returned by the #meal method (it's the value of the last line and thus is the return value of the method) and then #puts is being called before it.
+
+...(PART 3)
+
+This will print "Breakfast". The return keyword makes "Breakfast" the return value of the #meal method, so 'Dinner' below it isn't evaluated.
+
+As before, #puts is outputting the return value of the method since it's called before #meal.
+
+...(PART 4)
+
+I believe this code will just print "Breakfast", although I'm not entirely sure. I believe "Dinner" will not be output because only the method's return value will be output by #puts, but I could be mistaken.
+
+After checking, I've learned that I'm mistaken. The #puts 'Dinner' code will be executed and that text will also be output.
+
+...(PART 5)
+
+I believe this will print "Dinner" inside the method and then "nil", which is the return value of the #puts calls in the last line of the method definition. I'm not sure, however.
+
+I believe p returns a different value that puts does, but that doesn't affect the printed output. And I think the 'Dinner' line in the method will have no result but will not raise an exception/error.
+
+...(PART 6)
+
+This code will print "Breakfast". The first line contains a return command, so that will be the return value of the #meal method and the rest of the method definition is immaterial.
+
+#puts will print the output of the method as before.
+
+COUNTING SHEEP (PART 1)
+
+I think this code will print 0 1 2 3 4 and then nil. The |sheep| parameter will automatically be passed the integers as it counts up to 4.
+
+--Correction--
+	Instead of nil, this method will return 5. I now know that the Integer#times method returns the initial value of the integer.
+
+COUNTING SHEEP (PART 2)
+
+This should print 0 1 2 3 4 and then 10, because 10 is the last line of the method and thus should be returned and output by #puts.
+
+COUNTING SHEEP (PART 3)
+
+I'm not confident about the return value, but I believe it will return the last value, which is 2, so I think this may output 0 1 2 2, the second 2 being the value returned from the method.
+
+--Correction--
+	return did not provide a value, so nil is returned, not 2. The total output is 0 1 2 nil.
+
+TRICKY NUMBER
+
+I think this may print 1...but then this exercise is named tricky... From what I've seen thus far, I think assignment returns the rvalue, but I'm not certain.
+
+YES! Correct! This reinforces my memory that an assignment statement returns the rvalue.
