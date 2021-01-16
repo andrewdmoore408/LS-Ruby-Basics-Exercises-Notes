@@ -1,0 +1,82 @@
+CREATE A STRING
+
+empty = String.new
+
+QUOTE CONFUSION
+
+puts "It's now 12 o'clock."
+
+--Notes--
+	Can use alternate syntax with parens and percent signs with letters, such as %q(It's now 12 o'clock) => 'It's now 12 o'clock'
+
+	Uppercase letters allow interpolation (like double-quote strings) whereas lowercase letters do not.
+	Percent string letter codes:
+	%i Array of symbols		%q String (q for quote)
+	%r Regular expression		%s Symbol
+	%w Array of strings		%x Backtick (capture subshell result)
+
+IGNORING CASE
+
+name = 'Roger'
+
+puts name.downcase == 'RoGeR'.downcase ? "true" : "false"
+
+puts name.downcase == 'DAVE'.downcase ? "true" : "false"
+
+--Notes
+	String#casecmp can be used to compare two strings while ignoring case--this is probably a cleaner approach since #upcase/#downcase doesn't have to specified multiple times. It returns a number, with 0 signifying the same letters (case-insensitive).
+
+DYNAMIC STRING
+
+puts "Hello, #{name}!"
+
+COMBINING NAMES
+
+puts full_name = "#{first_name} #{last_name}"
+
+--Further exploration
+	One additional option (rather than using the String#+ method) is what I've used above. Another is to utilize the String#concat(*strings) method to concatenate the arguments to the original string.
+
+TRICKY FORMATTING
+
+state = 'tExAs'
+
+state.capitalize!
+
+puts state
+
+GOODBYE, NOT HELLO
+
+greeting = 'Hello!'
+
+greeting[0] = 'Goodbye!'
+
+puts greeting
+
+--Correction
+	This is incorrect. The method to replace a string (or at least one of them) is String#gsub! which takes the string to be replaced and the new string to insert in its place.
+
+PRINT THE ALPHABET
+
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
+
+letters = alphabet.split(//)
+
+letters.each { |letter| puts letter }
+
+--Notes
+	This works but could also be more concise if desired. The #split method returns the new array, so it could be as short as puts alphabet.split(//) (or split(''))
+
+PLURALIZE
+
+words = 'car human elephant airplane'
+
+words.split(' ').each { |word| puts word << 's' }
+
+ARE YOU THERE?
+
+colors = 'blue pink yellow orange'
+
+puts colors.include?('yellow') ? true : false
+puts colors.include?('purple') ? true : false
+
