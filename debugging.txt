@@ -1,0 +1,53 @@
+READING ERROR MESSAGES
+
+Wrong number of arguments and undefined method are raised. 
+
+The method expects an array, but it was passed multiple integers instead (wrong number of arguments). #each is undefined for an integer, and that's the second error.
+
+This can both be fixed by wrapping the arguments as written with brackets to make them arrays.
+
+WEATHER FORECAST
+
+I was stuck on this one; it turns out that the quotes need to be erased to make true and false boolean values rather than String objects.
+
+MULTIPLY BY FIVE
+
+Input from a user is always a string object; #to_i needs to be called on number to convert the type and then the multiplication will be performed as expected.
+
+PETS
+
+pets[:dog] = ['sparky', 'fido', 'bowser']
+
+I believe this is the only way to reassign a Hash key; perhaps it would be better to delete the incorrect value and readd this key with the correct value?
+
+Docs say that #rehash should be called to update the hash after updating this value.
+
+	--Notes: could also use Array#push to update the value. Does that still require a rehash?
+
+EVEN NUMBER
+
+The wrong method is being called. #select should be used instead of #map
+
+CONFUCIUS SAYS
+
+Strings need to be explicitly returned, so the return keyword must be added to each line.
+
+	--Correction: Above is incorrect regarding strings needing an explicit return command. The issue is that the other lines were still being evaluated, not that they're strings. 
+
+ACCOUNT BALANCE
+
+The issue here is that balance is being reassigned on each iteration rather than updated. Inside the #each method, the line should be balance += ... instead of balance =
+
+COLORFUL THINGS
+
+This code is indexing past the arrays--things is shorter than colors, but even if they were the same length, array indexes are always one fewer than the array.length.
+
+DIGIT PRODUCT
+
+The code is multiplying everything by zero. Starting product as 1 would fix the issue here.
+
+WARRIORS AND WIZARDS
+
+The problem here is that the player's input is a string (as always), but the hash keys are symbols. The string needs to be converted into a symbol and then the #merge method will work.
+
+We also need to make sure the player hash is updated by using either #merge! with the bang suffix or an assignment statement.
