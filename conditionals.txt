@@ -1,0 +1,71 @@
+UNPREDICTABLE WEATHER (PART 1)
+
+sun = ['visible', 'hidden'].sample
+
+if sun == 'visible'
+  puts "The sun is so bright!"
+end
+
+...(PART 2)
+
+unless sun == 'visible'
+  puts "The clouds are blocking the sun!"
+end
+
+...(PART 3)
+
+puts "The sun is so bright!" if sun == 'visible'
+
+puts "The clouds are blocking the sun!" unless sun == 'visible'
+
+TRUE OR FALSE
+
+puts boolean ? "I'm true!" : "I'm false!"
+
+TRUTHY NUMBER
+
+This code will print the first option, "My favorite number is 7". Everything except false and nil is truthy in Ruby (even 0), so 7 is truthy and will evaluate to true.
+
+STOPLIGHT (PART 1)
+
+case stoplight
+  when 'green'
+    puts "Go!"
+  when 'yellow'
+    puts "Slow down!"
+  when 'red'
+    puts "Stop!"
+end
+
+...(PART 2)
+
+if stoplight == 'green'
+  puts 'Go!'
+elsif stoplight == 'yellow'
+  puts 'Slow down!'
+else
+  puts 'Stop!'
+end
+
+SLEEP ALERT
+
+msg = if status == 'awake'
+  "Be productive!"
+else
+  "Go to sleep!"
+end
+
+COOL NUMBERS
+
+The issue here is that only one equals sign is an assignment statement rather than a check for equality. There need to be two equals signs like so: if number == 5
+
+STOPLIGHT (PART 3)
+
+case stoplight
+  when 'green' then puts 'Go!'
+  when 'yellow' then puts 'Slow down!'
+  else then puts 'Stop!'
+end
+
+--Correction--
+	There is no then allowed after else in this usage. Just use else and then carry on: else puts 'Stop!'
