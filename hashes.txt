@@ -1,0 +1,65 @@
+FIRST CAR
+
+car = { type: 'sedan', color: 'blue', mileage: 80_000 }
+
+ADDING THE YEAR
+
+car = {
+  type:    'sedan',
+  color:   'blue',
+  mileage: 80_000
+}
+
+car[:year] = 2003
+
+BROKEN ODOMETER
+
+car.delete(:mileage)
+
+WHAT COLOR?
+
+puts car[:color]
+
+LABELED NUMBERS
+
+numbers = {
+  high:   100,
+  medium: 50,
+  low:    10
+}
+
+numbers.each do |k, v|
+  puts "A #{k} number is #{v}."
+end
+
+DIVIDED BY TWO
+
+half_numbers = numbers.map { |k, v| v / 2 }
+
+p half_numbers
+
+LOW, MEDIUM, OR HIGH?
+
+low_numbers = numbers.select do |key, value|
+  			value < 25
+	      	      end
+
+p low_numbers
+
+LOW OR NOTHING
+
+low_numbers = numbers.select! do |key, value|
+		value < 25
+	      end
+
+MULTIPLE CARS
+
+vehicles = { car: {type: 'sedan', color: 'blue', year: 2003},
+	     truck: {type: 'pickup', color: 'red', year: 1998}
+	   }
+
+WHICH COLLECTION?
+
+car = [ ['type', 'sedan'], ['color', 'blue'], ['year', 2003] ]
+
+	--Notes: The keys were symbols and should be indicated as such: [ :type, 'sedan'], etc...
